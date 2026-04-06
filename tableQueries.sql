@@ -50,4 +50,13 @@ CREATE TABLE Contracts (
 start_date), 
      
     CONSTRAINT unique_active_contract UNIQUE (job_id, freelancer_id) 
-);-- This file contains queries for table creation
+);
+-- Indexes for Bids
+CREATE INDEX idx_bids_job ON Bids(job_id);
+CREATE INDEX idx_bids_freelancer ON Bids(freelancer_id);
+
+-- Indexes for Contracts
+CREATE INDEX idx_contracts_job ON Contracts(job_id);
+CREATE INDEX idx_contracts_client ON Contracts(client_id);
+CREATE INDEX idx_contracts_freelancer ON Contracts(freelancer_id);
+-- This file contains queries for table creation
